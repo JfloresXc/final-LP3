@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>{% block title %}{% endblock %} | Final FAM</title>
+		{% load static %}
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/styles.css' %}"
+		/>
+	</head>
+	<body>
+		<header>
+			<div id="logotipo">
+				<img src="{% static 'images/untels.png' %}" />
+				<h1>UC04 | J. Flores, E. Alva, M. Motta</h1>
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="{% url 'cursos' %}">Lista de cursos</a>
+				</li>
+				<li>
+					<a href="{% url 'agregarcurso' %}">Agregar curso</a>
+				</li>
+				<li>
+					<a href="{% url 'carreras' %}">Lista de carreras</a>
+				</li>
+				<li>
+					<a href="{% url 'agregarcarrera' %}">Agregar carrera</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="barra">
+			<span class="esquina-izquierda"></span>
+			<span class="relleno-barra"></span>
+			<span class="esquina-derecha"></span>
+		</div>
+		<div id="content">
+			<div class="box">{% block content %}{% endblock %}</div>
+		</div>
+		<footer>
+            <p class="footer__text">
+                UNTELS - Lenguaje de Programación III &COPY;Jose Flores Chamba,
+                Edson Alva Chanta, Miguel Angel Motta Mendoza
+            </p>
+
+		</footer>
+	</body>
+</html>
